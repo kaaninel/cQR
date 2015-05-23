@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CryptoQrUtilities</name>
+    </assembly>
+    <members>
+        <member name="T:CryptoQrUtilities.QrUtilitiesWrapper">
+            <summary>
+            Urilities for handling simple tasks of QR encoding and decoding via bitmap media.
+            Not thread-safe.
+            </summary>
+        </member>
+        <member name="F:CryptoQrUtilities.QrUtilitiesWrapper.s_qrReader">
+            <summary>
+            A specialized QR decoder.
+            </summary>
+        </member>
+        <member name="M:CryptoQrUtilities.QrUtilitiesWrapper.GetQrDecoding(System.Drawing.Bitmap)">
+            <summary>
+            Tries to read a given bitmap as QR encoding.
+            </summary>
+            <returns>The result of the QR reading. 'null': If no QR was identified.</returns>
+            <param name="qrImage">The QR image to decode.</param>
+        </member>
+        <member name="M:CryptoQrUtilities.QrUtilitiesWrapper.GetQrEncoding(System.String,System.Int32,System.Int32)">
+            <summary>
+            Encodes a given text string into a bitmap image.
+            </summary>
+            <returns>The QR encoded bitmap.</returns>
+            <param name="text">The text to encode.</param>
+            <param name="imageWidth">A required width for the returned image.</param>
+            <param name="imageHeight">A required height for the returned image.</param>
+        </member>
+        <member name="T:CryptoQrUtilities.Logger">
+            <summary>
+            A logger to both the 'Trace' utility and to present a message-box on the user's UI.
+            </summary>
+        </member>
+        <member name="M:CryptoQrUtilities.Logger.LogInfo(System.String,System.Object[])">
+            <summary>
+            Log an information message.
+            </summary>
+            <param name="messageFormat">The message format</param>
+            <param name="args">Additional arguments if needed.</param>
+        </member>
+        <member name="M:CryptoQrUtilities.Logger.LogWarning(System.String,System.Object[])">
+            <summary>
+            Log a warning message.
+            </summary>
+            <param name="messageFormat">The message format</param>
+            <param name="args">Additional arguments if needed.</param>
+        </member>
+        <member name="M:CryptoQrUtilities.Logger.LogError(System.String,System.Object[])">
+            <summary>
+            Log an error message.
+            </summary>
+            <param name="messageFormat">The message format</param>
+            <param name="args">Additional arguments if needed.</param>
+        </member>
+        <member name="M:CryptoQrUtilities.Logger.LogFatal(System.String,System.Object[])">
+            <summary>
+            Log a critical error message.
+            </summary>
+            <param name="messageFormat">The message format</param>
+            <param name="args">Additional arguments if needed.</param>
+        </member>
+        <member name="T:CryptoQrUtilities.Cryption.CryptedEnvelope">
+            <summary>
+            Creates an encrypted envelope for a given data byte-buffer.
+            1. Create an AES key with which the data is encrypted.
+            2. Encrypt the AES key with an RSA public key.
+            3. bind the encrypted key to the encrypted data.
+            
+            Key containers are managed (created/deleted) statically, and the creation and usage of the envelope assumes the existance of these containers.
+            The creation of a key-container also sets its store location (machine-level or user-level).
+            </summary>
+        </member>
+        <member name="M:CryptoQrUtilities.Cryption.CryptedEnvelope.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoQrUtilities.Cryption.CryptedEnvelope"/> class with the text to encrypt.
+            </summary>
+            <param name="plainInput">Plain input to be encrypted.</param>
+            <param name="rsaContainerName">The name of the container for the RSA key.</param> 
+            <param name="useOAEPPadding">Whether to use OAEP padding.</param>
+        </member>
+        <member name="M:CryptoQrUtilities.Cryption.CryptedEnvelope.#ctor(System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoQrUtilities.Cryption.CryptedEnvelope"/> class with an already encrypted information.
+            </summary>
+            <param name="encryptedInformation">Encrypted information.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:CryptoQrUtilities.Cryption.CryptedEnvelope.CreateRsaPersistentKeyContainer(System.String,System.Boolean,System.Int32)" -->
+        <member name="M:CryptoQrUtilities.Cryption.CryptedEnvelope.DeleteKeyFromContainer(System.String)">
+            <summary>
+            Deletes the given RSA key container from the store. This can be used to refresh the private RSA keys.
+            </summary>
+            <param name="containerName">The name of the container to remove.</param>
+        </member>
+        <member name="M:CryptoQrUtilities.Cryption.CryptedEnvelope.CreateCryptedEnvelope(System.String,System.String,System.Boolean)">
+            <summary>
+            Creates the crypted envelope, and set the EncryptedText property.
+            </summary>
+            <param name="plainInput">Plain input to be encrypted.</param>
+            <param name="rsaContainerName">The name of the container for the RSA key.</param>
+            <param name="useOAEPPadding">Whether to use OAEP padding.</param>
+        </member>
+        <member name="M:CryptoQrUtilities.Cryption.CryptedEnvelope.AesEncryptText(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            Encrypts the given input text, using an AES key and an Initial Vector.
+            </summary>
+            <returns>The encrypted text.</returns>
+            <param name="plainInput">Plain text input to encrypt.</param>
+            <param name="aesKey">The AES key to use.</param>
+            <param name="aesIv">The AES IV to use.</param>
+        </member>
+        <member name="M:CryptoQrUtilities.Cryption.CryptedEnvelope.RsaEncryptKey(System.Byte[],System.String,System.Boolean)">
+            <summary>
+            Encrypts the given AES key.
+            </summary>
+            <param name="aesKeyToEncrypt">Aes key to encrypt.</param>
+            <param name="containerName">RSA key container name.</param>
+            <param name="useOAEPPadding">Whether to use OAEP padding.</param>
+            <returns>The encrypted key.</returns>
+        </member>
+        <member name="M:CryptoQrUtilities.Cryption.CryptedEnvelope.RetrieveEnvelopeContents(System.String,System.Boolean)">
+            <summary>
+            Decrypts the envelope and extract out the message.
+            </summary>
+            <param name="containerName">The RSA key container name.</param>
+            <param name="useOAEPPadding">Whether to use OAEP padding.</param>
+            <returns>The original text message.</returns>
+        </member>
+        <member name="M:CryptoQrUtilities.Cryption.CryptedEnvelope.GetAesKey(System.Byte[],System.String,System.Boolean)">
+            <summary>
+            Gets the aes key.
+            </summary>
+            <param name="encryptedAesKey">The encrypted AES key.</param>
+            <param name="containerName">The RSA key container name.</param> 
+            <param name="useOAEPPadding">Wheter to use OAEP padding upon decryption.</param> 
+            <returns>The aes key.</returns>
+        </member>
+        <member name="M:CryptoQrUtilities.Cryption.CryptedEnvelope.decryptOriginalMessage(System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            Decrypts the encrypted message in the envelope.
+            </summary>
+            <returns>The original decrypted message.</returns>
+            <param name="encryptedMessage">Encrypted message.</param>
+            <param name="aesKey">The AES key.</param>
+            <param name="aesIv">The AES Initial Vector.</param>
+        </member>
+        <member name="P:CryptoQrUtilities.Cryption.CryptedEnvelope.EncryptedContents">
+            <summary>
+            Gets the encrypted text.
+            </summary>
+        </member>
+        <member name="T:CryptoQrUtilities.QrMessage">
+            <summary>
+            An immutable message type carrying a QR bitmap and can be defined as encrypted.
+            </summary>
+        </member>
+        <member name="M:CryptoQrUtilities.QrMessage.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoQrUtilities.QrMessage"/> class for simple plain text.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:CryptoQrUtilities.QrMessage.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoQrUtilities.QrMessage"/> class for text that needs encryption.
+            </summary>
+            <param name="message">The message to encrypt.</param>
+            <param name="rsaKeyContainerName">The RSA key container name to use with encryption.</param>
+        </member>
+        <member name="M:CryptoQrUtilities.QrMessage.DeserializeFromQr(System.Drawing.Bitmap)">
+            <summary>
+            Deserializes the QrMessage from a given QR bitmap.
+            </summary>
+            <param name="qr">QR bitmap.</param>
+        </member>
+        <member name="M:CryptoQrUtilities.QrMessage.DeserializeEncodedMessage(System.String)">
+            <summary>
+            Deserializes the QrMessage from a given QR bitmap.
+            </summary>
+            <param name="encodedMessage">Base64 encoded message for decoding.</param>
+        </member>
+        <member name="M:CryptoQrUtilities.QrMessage.SerializeIntoQr">
+            <summary>
+            Serialize this instance contents into a QR bitmap.
+            </summary>
+        </member>
+        <member name="P:CryptoQrUtilities.QrMessage.Version">
+            <summary>
+            Gets the version of the framework supporting this message structure. May be used for backward/forward compatibility or compatibility check.
+            </summary>
+        </member>
+        <member name="P:CryptoQrUtilities.QrMessage.MessageContents">
+            <summary>
+            Gets the message contents. This is a textual message even when encrypted.ADISHILO
+            </summary>
+        </member>
+        <member name="P:CryptoQrUtilities.QrMessage.IsEncrypted">
+            <summary>
+            Gets a value indicating whether this instance is encryped.
+            </summary>
+        </member>
+    </members>
+</doc>

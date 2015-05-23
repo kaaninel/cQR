@@ -1,0 +1,33 @@
+c:\users\hp\documents\visual studio 2013\Projects\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\Colored_Quick_Response.exe.config
+c:\users\hp\documents\visual studio 2013\Projects\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\Colored_Quick_Response.exe
+c:\users\hp\documents\visual studio 2013\Projects\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\Colored_Quick_Response.pdb
+c:\users\hp\documents\visual studio 2013\Projects\Colored_Quick_Response\Colored_Quick_Response\obj\Debug\Colored_Quick_Response.csprojResolveAssemblyReference.cache
+c:\users\hp\documents\visual studio 2013\Projects\Colored_Quick_Response\Colored_Quick_Response\obj\Debug\Colored_Quick_Response.Form1.resources
+c:\users\hp\documents\visual studio 2013\Projects\Colored_Quick_Response\Colored_Quick_Response\obj\Debug\Colored_Quick_Response.Properties.Resources.resources
+c:\users\hp\documents\visual studio 2013\Projects\Colored_Quick_Response\Colored_Quick_Response\obj\Debug\Colored_Quick_Response.csproj.GenerateResource.Cache
+c:\users\hp\documents\visual studio 2013\Projects\Colored_Quick_Response\Colored_Quick_Response\obj\Debug\Colored_Quick_Response.exe
+c:\users\hp\documents\visual studio 2013\Projects\Colored_Quick_Response\Colored_Quick_Response\obj\Debug\Colored_Quick_Response.pdb
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\Colored_Quick_Response.exe.config
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\obj\Debug\Colored_Quick_Response.exe
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\obj\Debug\Colored_Quick_Response.pdb
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\Colored_Quick_Response.exe
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\Colored_Quick_Response.pdb
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\AForge.dll
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\AForge.Imaging.dll
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\AForge.Math.dll
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\CryptoQrUtilities.dll
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\System.ComponentModel.Composition.dll
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\Touchless.Vision.dll
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\WebCamLib.dll
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\zxing.dll
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\AForge.xml
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\AForge.Imaging.xml
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\AForge.Math.xml
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\obj\Debug\Colored_Quick_Response.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\obj\Debug\Colored_Quick_Response.Form1.resources
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\obj\Debug\Colored_Quick_Response.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\obj\Debug\Colored_Quick_Response.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\AForge.Video.dll
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\AForge.Video.xml
+C:\Users\Administrator\Desktop\Colored_Quick_Response\Colored_Quick_Response\bin\Debug\AForge.Video.DirectShow.xml
